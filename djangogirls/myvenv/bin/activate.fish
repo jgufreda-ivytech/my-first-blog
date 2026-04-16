@@ -33,10 +33,11 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/workspaces/my-first-blog/djangogirls/myvenv"
+set -gx VIRTUAL_ENV '/Users/jrg/Library/CloudStorage/OneDrive-gufreda.com/Dropbox/School/2025-2026/2026 Spring/SDEV 220/Module 5/django_blog/my-first-blog/djangogirls/myvenv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
-set -gx PATH "$VIRTUAL_ENV/bin" $PATH
+set -gx PATH "$VIRTUAL_ENV/"bin $PATH
+set -gx VIRTUAL_ENV_PROMPT myvenv
 
 # Unset PYTHONHOME if set.
 if set -q PYTHONHOME
@@ -56,7 +57,7 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
         set -l old_status $status
 
         # Output the venv prompt; color taken from the blue of the Python logo.
-        printf "%s%s%s" (set_color 4B8BBE) "(myvenv) " (set_color normal)
+        printf "%s(%s)%s " (set_color 4B8BBE) myvenv (set_color normal)
 
         # Restore the return status of the previous command.
         echo "exit $old_status" | .
@@ -65,5 +66,4 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     end
 
     set -gx _OLD_FISH_PROMPT_OVERRIDE "$VIRTUAL_ENV"
-    set -gx VIRTUAL_ENV_PROMPT "(myvenv) "
 end
