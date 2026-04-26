@@ -17,11 +17,12 @@
                         </a>
                         <a href="{% url 'post_draft_list' %}" class="top-menu">{% include './icons/pencil-square.svg'%}</a>
                         <p id="logout" class="top-menu">Hello {{ user.username }} <form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit" class="top-menu" style="background:none; border:none; cursor:pointer; color:white;">
-        (Log out)
-    </button>
-</form></p>
+                            {% csrf_token %}
+                            <button type="submit" class="top-menu" style="background:none; border:none; cursor:pointer; color:white;">
+                                (Log out)
+                            </button>
+                        </form>
+                        </p>
                         {% else %}
                         <a href="{% url 'login' %}" class="top-menu">{% include './icons/lock-fill.svg' %}</a>
                         {% endif %}
